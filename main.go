@@ -1,14 +1,18 @@
 package main
 
 import (
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
+
+	"github.com/frei-0xff/inmak_invoice_generator/internal/ui"
 )
 
 func main() {
-	a := app.New()
-	w := a.NewWindow("Hello World")
+	a := app.NewWithID("com.inmak.invoice_generator")
+	w := a.NewWindow("Генератор счетов | ИнМАК")
 
-	w.SetContent(widget.NewLabel("Hello World!"))
+	w.SetContent(ui.CreateMaster(w))
+	w.Resize(fyne.NewSize(1280, 900))
+	w.CenterOnScreen()
 	w.ShowAndRun()
 }
