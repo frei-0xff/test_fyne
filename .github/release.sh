@@ -18,9 +18,14 @@ EXT=''
 if [ $GOOS == 'windows' ]; then
 EXT='.exe'
 fi
+if [ $GOOS == 'android' ]; then
+EXT='.apk'
+fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
 fyne package -os $GOOS -name $FILE_LIST -release
+
+ls -l
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 
