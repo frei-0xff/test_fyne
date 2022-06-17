@@ -12,4 +12,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
         GOOS: windows
+        CGO_ENABLED: 1
     - run: ls -l
