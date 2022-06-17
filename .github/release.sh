@@ -4,7 +4,7 @@
 
 apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
-       curl jq imagemagick
+       curl jq # imagemagick
 
 EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 echo $EVENT_DATA | jq .
@@ -21,10 +21,10 @@ fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
 go install fyne.io/fyne/v2/cmd/fyne
-if [ $GOOS == 'windows' ]; then
-convert Icon.png -define icon:auto-resize=256,64,48,32,16 $FILE_LIST.syso.ico
-gowindres -arch $GOARCH -output $FILE_LIST.syso
-fi
+# if [ $GOOS == 'windows' ]; then
+# convert Icon.png -define icon:auto-resize=256,64,48,32,16 $FILE_LIST.syso.ico
+# gowindres -arch $GOARCH -output $FILE_LIST.syso
+# fi
 fyne package -os $GOOS -name $FILE_LIST -icon Icon.png
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
