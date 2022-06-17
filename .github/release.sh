@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Based on: https://github.com/ngs/go-release.action/blob/master/entrypoint.sh
+
 apk add --no-cache curl jq git zip
 apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
@@ -35,6 +37,8 @@ else
 ARCHIVE=tmp.tgz
 tar cvfz $ARCHIVE ${FILE_LIST}
 fi
+
+which md5sum
 
 CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
 
