@@ -20,7 +20,7 @@ if [ $GOOS == 'windows' ]; then
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-fyne package -os $GOOS -release
+fyne package -os $GOOS -name $FILE_LIST -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
