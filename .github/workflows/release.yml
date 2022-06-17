@@ -8,6 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: ./.github/release.sh
+      env:
+        GOOS: windows
+        CC: x86_64-w64-mingw32-gcc
     - run: go install fyne.io/fyne/v2/cmd/fyne
     - run: fyne package -os windows
       env:
