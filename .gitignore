@@ -4,7 +4,6 @@
 *.dll
 *.so
 *.dylib
-inmak_invoice_generator
 
 # Test binary, built with `go test -c`
 *.test
@@ -14,3 +13,4 @@ inmak_invoice_generator
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+# 

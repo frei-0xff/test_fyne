@@ -1,11 +1,8 @@
-module github.com/frei-0xff/inmak_invoice_generator
+module github.com/frei-0xff/test_fyne
 
 go 1.18
 
-require (
-	fyne.io/fyne/v2 v2.2.1
-	github.com/shopspring/decimal v1.3.1
-)
+require fyne.io/fyne/v2 v2.2.1
 
 require (
 	fyne.io/systray v1.10.0 // indirect
