@@ -4,11 +4,10 @@ jobs:
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
-    container: lucor/fyne-cross:base-latest
+    container: fyneio/fyne-cross:base-latest
     steps:
     - uses: actions/checkout@master
-    - run: go version
-    - run: go install fyne.io/fyne/v2/cmd/fyne@latest
+    - run: go install fyne.io/fyne/v2/cmd/fyne
     - run: fyne help
     # - run: go build -ldflags "-s -w" .
     #   env:
