@@ -21,7 +21,6 @@ fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
 GOOS=linux GOARCH=amd64 CC=gcc GOBIN=/usr/local/bin/ go install fyne.io/fyne/v2/cmd/fyne@latest
-fyne version
 fyne package -os $GOOS -name $FILE_LIST -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
