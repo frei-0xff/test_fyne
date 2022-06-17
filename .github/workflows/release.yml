@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: go install fyne.io/fyne/v2/cmd/fyne
-    - run: fyne help
+    - run: fyne -os windows
     # - run: go build -ldflags "-s -w" .
     #   env:
     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
