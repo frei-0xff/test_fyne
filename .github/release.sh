@@ -20,7 +20,7 @@ if [ $GOOS == 'windows' ]; then
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-go install -u fyne.io/fyne/v2/cmd/fyne@latest
+go install fyne.io/fyne/v2/cmd/fyne@latest
 fyne package -os $GOOS -name $FILE_LIST -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
