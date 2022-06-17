@@ -4,7 +4,7 @@ jobs:
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
-    container: fyneio/fyne-cross:base-latest
+    container: lucor/fyne-cross:base-latest
     steps:
     - uses: actions/checkout@master
     - run: go version
