@@ -13,15 +13,3 @@ jobs:
         GOOS: windows
         GOARCH: amd64
         CC: x86_64-w64-mingw32-gcc
-    # - run: go install fyne.io/fyne/v2/cmd/fyne
-    # - run: fyne package -os windows
-    #   env:
-    #     CC: x86_64-w64-mingw32-gcc
-    # - run: go build -ldflags "-s -w" .
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     GOOS: windows
-    #     GOARCH: amd64
-    #     CC: x86_64-w64-mingw32-gcc
-    #     CGO_ENABLED: 1
-    - run: ls -l
