@@ -21,8 +21,8 @@ fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
 go install fyne.io/fyne/v2/cmd/fyne
-convert Icon.png -define icon:auto-resize=64,48,32,16 Icon.ico
-gowindres -arch $GOARCH -input Icon.ico -output $FILE_LIST.syso
+convert Icon.png -define icon:auto-resize=64,48,32,16 $FILE_LIST.syso.ico
+gowindres -arch $GOARCH -output $FILE_LIST.syso
 fyne package -os $GOOS -name $FILE_LIST
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
