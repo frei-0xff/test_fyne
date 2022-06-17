@@ -20,7 +20,8 @@ EXT='.exe'
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-echo $FILE_LIST
+go install fyne.io/fyne/v2/cmd/fyne
+fyne package -os $GOOS -name $FILE_LIST
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 
