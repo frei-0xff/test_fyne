@@ -7,8 +7,9 @@ jobs:
     container: fyneio/fyne-cross:base-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      run: go build -ldflags "-s -w" .
+    - run: go build -ldflags "-s -w" .
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GOARCH: amd64
+        GOOS: windows
     - run: ls -l
