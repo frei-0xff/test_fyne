@@ -16,28 +16,27 @@ NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
 
 EXT=''
 if [ $GOOS == 'windows' ]; then
-EXT='.exe'
-fi
-if [ $GOOS == 'android' ]; then
-EXT='.apk'
+    EXT='.exe'
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-fyne package -os $GOOS -name $FILE_LIST -release
-
-ls -l
+fyne package -os $GOOS -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
 
 
-if [ $GOOS == 'windows' ]; then
-ARCHIVE=tmp.zip
-zip -9r $ARCHIVE ${FILE_LIST}
+if [ $GOOS == 'android' ]; then
+    ARCHIVE=$(ls *.apk)
 else
-ARCHIVE=tmp.tgz
-tar cvfz $ARCHIVE ${FILE_LIST}
+    if [ $GOOS == 'windows' ]; then
+        ARCHIVE=tmp.zip
+        zip -9r $ARCHIVE ${FILE_LIST}
+    else
+        ARCHIVE=tmp.tgz
+        tar cvfz $ARCHIVE ${FILE_LIST}
+    fi
 fi
 
 CHECKSUM=$(md5sum ${ARCHIVE} | cut -d ' ' -f 1)
