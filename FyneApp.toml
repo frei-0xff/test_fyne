@@ -2,7 +2,7 @@ Website = "https://github.com/Jacalz/rymdport"
 
 [Details]
   Icon = "internal/assets/icon/icon.png"
-  Name = "rymdport"
-  ID = "io.github.jacalz.rymdport"
+  Name = "FyneTest"
+  ID = "io.github.jacalz.test"
   Version = "3.1.0"
   Build = 17
