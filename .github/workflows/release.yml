@@ -1,15 +1,26 @@
 on: release
 name: Build Release
 jobs:
-  release-linux-amd64:
-    name: release windows/amd64
+  # release-linux-amd64:
+  #   name: release windows/amd64
+  #   runs-on: ubuntu-latest
+  #   container: fyneio/fyne-cross:1.2-windows
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - run: ./.github/release.sh
+  #     env:
+  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       GOOS: windows
+  #       GOARCH: amd64
+  #       CC: x86_64-w64-mingw32-gcc
+  release-android-arm64:
+    name: release android/arm64
     runs-on: ubuntu-latest
-    container: fyneio/fyne-cross:1.2-windows
+    container: fyneio/fyne-cross:1.2-android
     steps:
     - uses: actions/checkout@master
     - run: ./.github/release.sh
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOOS: windows
-        GOARCH: amd64
-        CC: x86_64-w64-mingw32-gcc
+        GOOS: android
+        GOARCH: arm64
