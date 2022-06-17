@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 apk add --no-cache curl jq git zip
 apt-get update -qq \
@@ -9,7 +9,6 @@ apt-get update -qq \
 EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 echo $EVENT_DATA | jq .
 UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
-echo $UPLOAD_URL
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
 RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
