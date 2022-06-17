@@ -20,7 +20,7 @@ if [ $GOOS == 'windows' ]; then
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-GOOS=linux GOARCH=adm64 GOBIN=/usr/local/bin/ go install fyne.io/fyne/v2/cmd/fyne@latest
+GOOS=linux GOARCH=amd64 GOBIN=/usr/local/bin/ go install fyne.io/fyne/v2/cmd/fyne@latest
 fyne version
 fyne package -os $GOOS -name $FILE_LIST -release
 
