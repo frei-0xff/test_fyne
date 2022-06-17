@@ -4,9 +4,10 @@ jobs:
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
+    container: fyneio/fyne-cross:base-latest
     steps:
     - uses: actions/checkout@master
     - name: compile and release
-      uses: fyneio/fyne-cross:base-latest
+      run: go --version
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
