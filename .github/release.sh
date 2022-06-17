@@ -21,7 +21,11 @@ fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
 GOOS=linux GOARCH=amd64 CC=gcc GOBIN=/usr/local/bin/ go install fyne.io/fyne/v2/cmd/fyne@latest
-fyne package -os $GOOS -name $FILE_LIST -release
+if [ $GOOS == 'android' ]; then
+    fyne package -os $GOOS/$GOARCH -release
+else
+    fyne package -os $GOOS -name $FILE_LIST -release
+fi
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
