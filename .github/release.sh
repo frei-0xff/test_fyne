@@ -20,7 +20,7 @@ EXT='.exe'
 fi
 FILE_LIST="${PROJECT_NAME}${EXT}"
 
-fyne package -os $GOOS -name $FILE_LIST
+fyne package -os $GOOS -name $FILE_LIST -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
 
