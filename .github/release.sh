@@ -23,9 +23,7 @@ FILE_LIST="${PROJECT_NAME}${EXT}"
 fyne package -os $GOOS -release
 
 FILE_LIST="${FILE_LIST} ${EXTRA_FILES}"
-
 FILE_LIST=`echo "${FILE_LIST}" | awk '{$1=$1};1'`
-
 
 if [ $GOOS == 'android' ]; then
     ARCHIVE=$(ls *.apk)
