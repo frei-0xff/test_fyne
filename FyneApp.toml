@@ -1,8 +1,6 @@
-Website = "https://github.com/Jacalz/rymdport"
-
 [Details]
   Icon = "Icon.png"
   Name = "FyneTest"
-  ID = "io.github.jacalz.test"
-  Version = "3.1.0"
+  ID = "com.test.fyne"
+  Version = "0.1.0"
   Build = 18
