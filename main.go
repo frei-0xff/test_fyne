@@ -7,7 +7,6 @@ import (
 
 func main() {
 	a := app.New()
-	// a.SetIcon(assets.Icon)
 	w := a.NewWindow("Hello World")
 
 	w.SetContent(widget.NewLabel("Hello World!"))
