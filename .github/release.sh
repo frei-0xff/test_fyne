@@ -22,7 +22,7 @@ FILE_LIST="${PROJECT_NAME}${EXT}"
 
 GOOS=linux GOARCH=amd64 CC=gcc GOBIN=/usr/local/bin/ go install fyne.io/fyne/v2/cmd/fyne@latest
 if [ $GOOS == 'android' ]; then
-    fyne package -os $GOOS/$GOARCH -icon Icon.png -release
+    fyne package -os $GOOS/$GOARCH -release
 else
     fyne package -os $GOOS -name $FILE_LIST -release
 fi
